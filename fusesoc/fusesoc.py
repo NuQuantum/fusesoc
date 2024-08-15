@@ -111,7 +111,7 @@ class Fusesoc:
 
         work_root = self.get_work_root(core, flags)
 
-        if not self.config.no_export:
+        if not self.config.no_export and not "no_export" in flags:
             export_root = os.path.join(work_root, "src")
             logger.debug(f"Setting export_root to {export_root}")
         else:
